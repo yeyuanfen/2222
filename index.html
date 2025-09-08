@@ -1,0 +1,986 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>燊业国际新材料 - 高品质印刷材料供应商</title>
+    <!-- 引入支持生僻字的中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#165DFF',
+              secondary: '#36CFC9',
+              accent: '#FF7D00',
+              dark: '#1D2129',
+              light: '#F2F3F5'
+            },
+            fontFamily: {
+              sans: ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        }
+      }
+    </script>
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+       .content-auto {
+          content-visibility: auto;
+        }
+       .text-shadow {
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+       .text-shadow-lg {
+          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+       .transition-custom {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+       .language-transition {
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+       .language-fade {
+          opacity: 0.7;
+          transform: translateY(5px);
+        }
+       .language-fade-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+       .qrcode-hover {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+       .qrcode-hover:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+       /* 图片清晰化优化 */
+       .image-sharp {
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: crisp-edges;
+          image-rendering: pixelated;
+          image-rendering: high-quality;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+       .image-loading {
+          background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+          background-size: 200% 100%;
+          animation: loading 1.5s infinite;
+        }
+       @keyframes loading {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+       .image-container {
+          position: relative;
+          overflow: hidden;
+        }
+       .image-container img {
+          transition: transform 0.3s ease, filter 0.3s ease;
+        }
+       .image-container:hover img {
+          transform: scale(1.05);
+          filter: brightness(1.1) contrast(1.1);
+        }
+       .factory-image {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+       .factory-image:hover {
+          transform: scale(1.02);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+       .image-card {
+          position: relative;
+          overflow: hidden;
+          border-radius: 8px;
+        }
+       .image-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+          color: white;
+          padding: 16px;
+          transform: translateY(100%);
+          transition: transform 0.3s ease;
+        }
+       .image-card:hover.image-overlay {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  
+  <body class="font-sans text-dark bg-white">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/95 shadow-sm">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="#" class="flex items-center space-x-3">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/ae53a22fb15149cc801403b3e1bb2177.png~tplv-a9rns2rl98-24:720:720.png?rk3s=1fb89129&amp;x-expires=1757557933&amp;x-signature=DRkiDxXZDKTEFOoXAfXvJidvjwU%3D" alt="燊业国际新材料logo" class="w-12 h-12 object-contain image-sharp" loading="lazy">
+              <span class="text-xl font-bold text-primary" data-i18n="company">燊业国际新材料</span>
+            </a>
+          </div>
+  
+          <!-- 桌面导航 -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="text-dark hover:text-primary font-medium transition-custom" data-i18n="nav.home">首页</a>
+            <a href="#products" class="text-dark hover:text-primary font-medium transition-custom" data-i18n="nav.products">产品</a>
+            <a href="#features" class="text-dark hover:text-primary font-medium transition-custom" data-i18n="nav.features">优势</a>
+            <a href="#about" class="text-dark hover:text-primary font-medium transition-custom" data-i18n="nav.about">关于我们</a>
+            <a href="#contact" class="text-dark hover:text-primary font-medium transition-custom" data-i18n="nav.contact">联系我们</a>
+            
+            <!-- 语言切换按钮 -->
+            <div class="flex border rounded-md overflow-hidden ml-4">
+              <button id="lang-zh" class="px-3 py-1.5 bg-primary text-white font-medium transition-custom">中</button>
+              <button id="lang-en" class="px-3 py-1.5 bg-white text-dark hover:bg-gray-100 font-medium transition-custom">En</button>
+            </div>
+            
+            <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-md font-medium transition-custom" data-i18n="inquiry">立即咨询</a>
+          </nav>
+  
+          <!-- 移动端菜单按钮 -->
+          <button id="mobile-menu-button" class="md:hidden text-dark focus:outline-none">
+            <i class="fa fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+  
+      <!-- 移动端导航菜单 -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-3">
+          <nav class="flex flex-col space-y-3">
+            <a href="#home" class="text-dark hover:text-primary py-2 font-medium transition-custom" data-i18n="nav.home">首页</a>
+            <a href="#products" class="text-dark hover:text-primary py-2 font-medium transition-custom" data-i18n="nav.products">产品</a>
+            <a href="#features" class="text-dark hover:text-primary py-2 font-medium transition-custom" data-i18n="nav.features">优势</a>
+            <a href="#about" class="text-dark hover:text-primary py-2 font-medium transition-custom" data-i18n="nav.about">关于我们</a>
+            <a href="#contact" class="text-dark hover:text-primary py-2 font-medium transition-custom" data-i18n="nav.contact">联系我们</a>
+            
+            <!-- 移动端语言切换 -->
+            <div class="flex border rounded-md overflow-hidden my-2">
+              <button id="mobile-lang-zh" class="flex-1 px-3 py-2 bg-primary text-white font-medium transition-custom">中文</button>
+              <button id="mobile-lang-en" class="flex-1 px-3 py-2 bg-white text-dark hover:bg-gray-100 font-medium transition-custom">English</button>
+            </div>
+            
+            <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-5 py-3 rounded-md font-medium text-center transition-custom" data-i18n="inquiry">立即咨询</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+  
+    <!-- 英雄区域 -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-light to-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-10 lg:mb-0">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-6 text-shadow-lg language-transition" data-i18n="hero.title">
+              高品质数码印刷材料<br>赋能您的业务增长
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-lg language-transition" data-i18n="hero.desc">
+              我们提供专业的转印纸、UV膜和印刷油墨，满足各种工业印刷需求，助您实现高品质印刷效果。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#products" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md font-medium text-center transition-custom" data-i18n="browseProducts">浏览产品</a>
+              <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary/5 px-8 py-3 rounded-md font-medium text-center transition-custom" data-i18n="contactUs">联系我们</a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 image-container">
+            <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/b1d1915519484e8097ea3d0198250fee.jpg~tplv-a9rns2rl98-24:720:720.image?rk3s=1fb89129&amp;x-expires=1757553779&amp;x-signature=24MqYIIH%2BJyV9TSyLDvjO3txosQ%3D" alt="高品质印刷材料展示" class="w-full h-auto rounded-lg shadow-xl image-sharp" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 产品系列 -->
+    <section id="products" class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4 language-transition" data-i18n="products.title">我们的产品系列</h2>
+          <p class="text-gray-600 text-lg language-transition" data-i18n="products.desc">精选高品质印刷材料，满足您的各种生产需求，提供卓越的印刷效果和耐用性</p>
+        </div>
+  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 产品1 -->
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-custom overflow-hidden group">
+            <div class="relative image-container">
+              <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/c6a6bd83a1d049adb186063fb6ee7c56.jpg~tplv-a9rns2rl98-24:720:720.image?rk3s=1fb89129&amp;x-expires=1757553779&amp;x-signature=PB5QTuJ0qVB390unGitPSMFUYq0%3D" alt="高品质转印纸" class="w-full h-60 object-cover image-sharp" loading="lazy">
+              <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium" data-i18n="bestseller">畅销品</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="products.transferPaper">高品质转印纸</h3>
+              <p class="text-gray-600 mb-4 language-transition" data-i18n="products.transferPaperDesc">适用于各种面料的转印印花，色彩还原度高，耐洗不易褪色，操作简便。</p>
+              <a href="#" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom language-transition" data-i18n="learnMoreDetails">了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+          </div>
+  
+          <!-- 产品2 - UV打印膜 -->
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-custom overflow-hidden group">
+            <div class="relative image-container">
+              <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/3604c649c49845d988959b70f5acd8ff~tplv-a9rns2rl98-image.image?rcl=202509041359261B685EE769D63E191339&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757570367&amp;x-signature=oDoogWlKXAnL4faagNSSJvnxw%2Fw%3D" alt="UV打印膜" class="w-full h-60 object-cover image-sharp" loading="lazy">
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium" data-i18n="newArrival">新品</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="products.uvFilm">UV打印膜</h3>
+              <p class="text-gray-600 mb-4 language-transition" data-i18n="products.uvFilmDesc">采用先进UV固化技术，具有超强附着力和耐刮性，适用于金属、玻璃、塑料等多种硬质表面。</p>
+              <a href="#" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom language-transition" data-i18n="learnMoreDetails">了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+          </div>
+  
+          <!-- 产品3 -->
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-custom overflow-hidden group">
+            <div class="relative image-container">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/ff0fdb76a6d941a281c6b94f1ef4d178~tplv-a9rns2rl98-image.image?rcl=202509041055121665ABF3538BE8C3037E&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757559313&amp;x-signature=f6xi7OuEOm7A6BCtkurVDQFP5vE%3D" alt="彩色打印胶片" class="w-full h-60 object-cover image-sharp" loading="lazy">
+              <span class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium" data-i18n="recommended">推荐</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="products.colorFilm">彩色打印胶片</h3>
+              <p class="text-gray-600 mb-4 language-transition" data-i18n="products.colorFilmDesc">专业级彩色打印胶片，色彩饱和度高，层次感强，适用于高端打印需求。</p>
+              <a href="#" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom language-transition" data-i18n="learnMoreDetails">了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+          </div>
+  
+          <!-- 新增产品4 - 热转印墨水 -->
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-custom overflow-hidden group">
+            <div class="relative image-container">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/487859e481254607a61bbc0b1f246743~tplv-a9rns2rl98-image.image?rcl=2025090513541809632F95F3DDC5A04C83&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757656458&amp;x-signature=mhoAaLoLy4dInzFKMo2rrIW%2FzPA%3D" alt="热转印墨水" class="w-full h-60 object-cover image-sharp" loading="lazy">
+              <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium" data-i18n="bestseller">畅销品</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="products.thermalInk">热转印墨水</h3>
+              <p class="text-gray-600 mb-4 language-transition" data-i18n="products.thermalInkDesc">高附着力热转印专用墨水，颜色鲜艳持久，适用于多种面料，耐水洗性能优异。</p>
+              <a href="#" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom language-transition" data-i18n="learnMoreDetails">了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+          </div>
+  
+          <!-- DTF打印膜产品展示 -->
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-custom overflow-hidden group">
+            <div class="relative image-container">
+              <img src="dtf-lion-dance.jpg" alt="DTF打印膜产品展示 - 舞狮图案应用效果" class="w-full h-60 object-cover image-sharp" loading="lazy">
+              <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium" data-i18n="newArrival">新品</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="products.dtfFilm">DTF打印膜</h3>
+              <p class="text-gray-600 mb-4 language-transition" data-i18n="products.dtfFilmDesc">直接转印胶片，无需预处理，适用于棉、麻、涤纶等多种面料，色彩表现力强，弹性好，耐水洗。可制作精美的舞狮图案等复杂设计。</p>
+              <a href="#" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom language-transition" data-i18n="learnMoreDetails">了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+          </div>
+  
+          <!-- UV烫金膜 -->
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-custom overflow-hidden group">
+            <div class="relative image-container">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/d0500d0411aa4dcfb471387f5f4204c3~tplv-a9rns2rl98-image.image?rcl=20250905111912A33D4F709687ADAFE3FF&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757647152&amp;x-signature=ln2lXGuWU%2B6BsjUzP5wwD75bkAI%3D" alt="UV烫金膜" class="w-full h-60 object-cover image-sharp" loading="lazy">
+              <span class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium" data-i18n="recommended">推荐</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="products.petGoldFilm">UV烫金膜</h3>
+              <p class="text-gray-600 mb-4 language-transition" data-i18n="products.petGoldFilmDesc">采用先进UV固化技术的烫金膜，附着力强，光泽度高，烫印效果持久，适用于礼品包装、化妆品盒等高端印刷领域。</p>
+              <a href="#" class="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-custom language-transition" data-i18n="learnMoreDetails">了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="text-center mt-12">
+          <a href="#" class="inline-flex items-center bg-white border border-primary text-primary hover:bg-primary/5 px-6 py-3 rounded-md font-medium transition-custom language-transition" data-i18n="viewAllProducts">查看全部产品 <i class="fa fa-long-arrow-right ml-2"></i></a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 产品优势 -->
+    <section id="features" class="py-20 bg-light">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4 language-transition" data-i18n="features.title">我们的产品优势</h2>
+          <p class="text-gray-600 text-lg language-transition" data-i18n="features.desc">精选高品质原料和先进生产工艺，为您提供卓越的印刷解决方案</p>
+        </div>
+  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 优势1 -->
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-diamond text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="features.highQualityMaterials">高品质原料</h3>
+            <p class="text-gray-600 language-transition" data-i18n="features.highQualityMaterialsDesc">采用进口优质原材料，经过严格筛选和测试，确保产品稳定性和一致性。</p>
+          </div>
+  
+          <!-- 优势2 -->
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-paint-brush text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="features.highColorReproduction">高色彩还原</h3>
+            <p class="text-gray-600 language-transition" data-i18n="features.highColorReproductionDesc">出色的色彩表现，能精准还原设计稿色彩，呈现鲜艳饱满的印刷效果。</p>
+          </div>
+  
+          <!-- 优势3 -->
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-leaf text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="features.ecoFriendlyTitle">环保无害</h3>
+            <p class="text-gray-600 language-transition" data-i18n="features.ecoFriendlyDesc">符合国际环保标准，采用无毒无害配方，对人体和环境友好，使用安全。</p>
+          </div>
+  
+          <!-- 优势4 -->
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-bolt text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="features.quickDryingTitle">快速干燥</h3>
+            <p class="text-gray-600 language-transition" data-i18n="features.quickDryingDesc">特殊配方设计，干燥速度快，能提高生产效率，减少等待时间，适合大规模生产。</p>
+          </div>
+  
+          <!-- 优势5 -->
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-th-large text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="features.wideApplicability">广泛适用性</h3>
+            <p class="text-gray-600 language-transition" data-i18n="features.wideApplicabilityDesc">适用于多种面料和材质，无论是棉、麻、丝还是合成材料，都能呈现出色效果。</p>
+          </div>
+  
+          <!-- 优势6 -->
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-shield text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 language-transition" data-i18n="features.durability">强耐久性</h3>
+            <p class="text-gray-600 language-transition" data-i18n="features.durabilityDesc">优异的耐洗性和耐磨性，印刷图案不易褪色或开裂，保持长久美观。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 关于我们 -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4 language-transition" data-i18n="about.title">专业数码印刷材料供应商</h2>
+          <p class="text-gray-600 text-lg language-transition" data-i18n="about.desc">
+            我们是拥有15年经验的数码印刷材料生产厂家，专注于转印纸、UV膜和印刷油墨的研发、生产与销售。凭借先进的生产设备和严格的质量控制体系，为全球客户提供高品质的印刷材料解决方案。
+          </p>
+        </div>
+  
+        <!-- 工厂图片展示区 -->
+        <div class="mb-16">
+          <h3 class="text-xl font-bold mb-8 text-center language-transition" data-i18n="about.ourFactory">工厂实拍</h3>
+          
+          <!-- 图片展示模板 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- 工厂外观 -->
+            <div class="image-card factory-image image-container">
+              <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/ea510ab7d6d84d959c3f7fbcc39c9512.jpg~tplv-a9rns2rl98-24:720:720.image?rk3s=1fb89129&amp;x-expires=1757553779&amp;x-signature=6cJ2gXrEprhpR4%2F2aQ1if1u0eT0%3D" alt="现代化厂区环境" class="w-full h-64 object-cover image-sharp" loading="lazy">
+              <div class="image-overlay">
+                <h4 class="font-bold text-lg mb-1">现代化厂区</h4>
+                <p class="text-sm opacity-90">占地面积20000平方米，绿化覆盖率达30%</p>
+              </div>
+            </div>
+            
+            <!-- 生产车间全景 -->
+            <div class="image-card factory-image image-container">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/fe104d374e0d47b5992109746d5fc472~tplv-a9rns2rl98-image.image?rcl=202509051420217BEEA2A1FA9BB52B42A5&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757658021&amp;x-signature=Cw%2B41QMwmUZYnIJnlOlJ33o4p1w%3D" alt="洁净生产车间" class="w-full h-64 object-cover image-sharp" loading="lazy">
+              <div class="image-overlay">
+                <h4 class="font-bold text-lg mb-1">洁净生产车间</h4>
+                <p class="text-sm opacity-90">万级无尘车间，恒温恒湿控制系统</p>
+              </div>
+            </div>
+            
+            <!-- 自动化生产线 -->
+            <div class="image-card factory-image image-container">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/f8000d9373c94acfb1cc46842875e609~tplv-a9rns2rl98-image.image?rcl=20250905142609B9EF79E052CA807AF6C8&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757658371&amp;x-signature=FnIUWhzAfVepvQxURqjggBlsFdw%3D" alt="智能涂布生产线" class="w-full h-64 object-cover image-sharp" loading="lazy">
+              <div class="image-overlay">
+                <h4 class="font-bold text-lg mb-1">智能涂布生产线</h4>
+                <p class="text-sm opacity-90">全自动控制系统，生产效率提升40%</p>
+              </div>
+            </div>
+            
+            <!-- 质量检测中心 -->
+            <div class="image-card factory-image image-container">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/d25c9c02a5f64f9c9251d2e5545dcd15~tplv-a9rns2rl98-image.image?rcl=20250905094839E5B55AAF0E50E48C8E39&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757641719&amp;x-signature=oCKoPSNN9sn8WN4UZlqq5QI2%2FU0%3D" alt="精密检测实验室" class="w-full h-64 object-cover image-sharp" loading="lazy">
+              <div class="image-overlay">
+                <h4 class="font-bold text-lg mb-1">精密检测实验室</h4>
+                <p class="text-sm opacity-90">配备国际先进检测设备，确保产品质量</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div class="flex items-start">
+                <div class="mr-4 text-primary text-2xl">
+                  <i class="fa fa-check-circle"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-2 language-transition" data-i18n="about.professionalTeam">专业团队</h4>
+                  <p class="text-gray-600 language-transition" data-i18n="about.professionalTeamDesc">拥有经验丰富的研发和生产团队，不断创新和改进产品。</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="mr-4 text-primary text-2xl">
+                  <i class="fa fa-certificate"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-2 language-transition" data-i18n="about.qualityCertification">质量认证</h4>
+                  <p class="text-gray-600 language-transition" data-i18n="about.qualityCertificationDesc">产品通过多项国际认证，质量可靠，安全环保。</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="mr-4 text-primary text-2xl">
+                  <i class="fa fa-globe"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-2 language-transition" data-i18n="about.globalSales">全球销售</h4>
+                  <p class="text-gray-600 language-transition" data-i18n="about.globalSalesDesc">产品出口到全球50多个国家和地区，深受客户好评。</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="mr-4 text-primary text-2xl">
+                  <i class="fa fa-comments"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-2 language-transition" data-i18n="about.qualityService">优质服务</h4>
+                  <p class="text-gray-600 language-transition" data-i18n="about.qualityServiceDesc">提供专业的技术支持和完善的售后服务，让您无后顾之忧。</p>
+                </div>
+              </div>
+            </div>
+            
+            <a href="#contact" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-custom language-transition" data-i18n="about.learnMore">了解更多 <i class="fa fa-arrow-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-light">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-4 language-transition" data-i18n="nav.contact">联系我们</h2>
+          <p class="text-gray-600 text-lg language-transition">无论您有任何疑问或需求，我们的专业团队都会为您提供及时、周到的服务</p>
+        </div>
+  
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/2">
+            <form class="bg-white p-8 rounded-xl shadow-md">
+              <div class="mb-6">
+                <label for="name" class="block text-gray-700 font-medium mb-2 language-transition">姓名</label>
+                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的姓名">
+              </div>
+              
+              <div class="mb-6">
+                <label for="email" class="block text-gray-700 font-medium mb-2 language-transition">邮箱</label>
+                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的邮箱">
+              </div>
+              
+              <div class="mb-6">
+                <label for="phone" class="block text-gray-700 font-medium mb-2 language-transition">电话</label>
+                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的电话">
+              </div>
+              
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-medium mb-2 language-transition">留言</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-custom" placeholder="请输入您的需求或疑问"></textarea>
+              </div>
+              
+              <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-md font-medium transition-custom language-transition" data-i18n="inquiry">立即咨询</button>
+            </form>
+          </div>
+          
+          <div class="lg:w-1/2">
+            <div class="bg-white p-8 rounded-xl shadow-md h-full">
+              <h3 class="text-2xl font-bold mb-6 language-transition">联系方式</h3>
+              
+              <div class="space-y-6 mb-8">
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fa fa-map-marker text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1 language-transition">公司地址</h4>
+                    <p class="text-gray-600 language-transition">中国广东省东莞市厚街镇厚街大道西38号208室（邮编：523000）</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fa fa-phone text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1 language-transition">联系电话</h4>
+                    <p class="text-gray-600">0086-134-2300-1388 (Trina Ye)</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fa fa-envelope text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1 language-transition">电子邮箱</h4>
+                    <p class="text-gray-600">info@shenye-materials.com</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fa fa-skype text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1 language-transition">Skype</h4>
+                    <p class="text-gray-600">yebiyun</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fa fa-clock-o text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1 language-transition">工作时间</h4>
+                    <p class="text-gray-600 language-transition">周一至周五: 9:00 - 18:00</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 二维码区域 -->
+              <div class="mb-8">
+                <h3 class="text-xl font-bold mb-4 language-transition">扫码联系我们</h3>
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="text-center qrcode-hover bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/403a352740b24849968593679183d0e8~tplv-a9rns2rl98-image.image?rcl=20250904110802356BFD7B93F2FBA53332&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757560083&amp;x-signature=VsEGXw%2BHOvqZjgmCK05kArC5%2B4o%3D" alt="微信二维码" class="w-36 h-36 mx-auto mb-2 object-cover rounded image-sharp" loading="lazy">
+                    <p class="text-gray-700 font-medium language-transition">微信</p>
+                  </div>
+                  <div class="text-center qrcode-hover bg-white p-4 rounded-lg shadow-sm">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/c903b8a0ff9d4054878e5cd29df357bb~tplv-a9rns2rl98-image.image?rcl=2025090411044604DC9AA78A0A3DE59F78&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1757559886&amp;x-signature=Xe8DCSuNSNvuEpWtnVB8brPo32M%3D" alt="WhatsApp二维码" class="w-36 h-36 mx-auto mb-2 object-cover rounded image-sharp" loading="lazy">
+                    <p class="text-gray-700 font-medium language-transition">WhatsApp</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/ae53a22fb15149cc801403b3e1bb2177.png~tplv-a9rns2rl98-24:720:720.png?rk3s=1fb89129&amp;x-expires=1757557933&amp;x-signature=DRkiDxXZDKTEFOoXAfXvJidvjwU%3D" alt="燊业国际新材料logo" class="w-10 h-10 object-contain image-sharp" loading="lazy">
+              <span class="text-xl font-bold text-white" data-i18n="company">燊业国际新材料</span>
+            </div>
+            <p class="text-gray-400 mb-6 language-transition">专业的数码印刷材料供应商，为全球客户提供高品质的转印纸、UV膜和印刷油墨解决方案。</p>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-bold mb-6 language-transition" data-i18n="nav.products">产品系列</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="products.transferPaper">高品质转印纸</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="products.uvFilm">UV打印膜</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="products.colorFilm">彩色打印胶片</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="products.thermalInk">热转印墨水</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="products.dtfFilm">DTF打印膜</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="products.petGoldFilm">UV烫金膜</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-bold mb-6 language-transition" data-i18n="quickLinks">快速链接</h4>
+            <ul class="space-y-3">
+              <li><a href="#home" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="nav.home">首页</a></li>
+              <li><a href="#about" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="nav.about">关于我们</a></li>
+              <li><a href="#products" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="nav.products">产品中心</a></li>
+              <li><a href="#contact" class="text-gray-400 hover:text-white transition-custom language-transition" data-i18n="nav.contact">联系我们</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-bold mb-6 language-transition" data-i18n="contactInfo">联系信息</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fa fa-map-marker text-gray-400 mt-1 mr-3"></i>
+                <span class="text-gray-400 language-transition">中国广东省东莞市厚街镇厚街大道西38号208室</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-phone text-gray-400 mr-3"></i>
+                <span class="text-gray-400">0086-134-2300-1388</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-envelope text-gray-400 mr-3"></i>
+                <span class="text-gray-400">info@shenye-materials.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <p class="text-gray-400 language-transition" data-i18n="copyright">© 2023 燊业国际新材料有限公司 版权所有</p>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- JavaScript -->
+    <script>
+      // 导航栏滚动效果
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('shadow-md', 'py-2');
+          navbar.classList.remove('py-4');
+        } else {
+          navbar.classList.remove('shadow-md', 'py-2');
+          navbar.classList.add('py-4');
+        }
+      });
+  
+      // 移动端菜单切换
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        }
+      });
+  
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          // 关闭移动菜单（如果打开）
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+          
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+  
+      // 语言切换功能
+      const translations = {
+        en: {
+          company: "Shenye International New Materials",
+          "nav.home": "Home",
+          "nav.products": "Products",
+          "nav.features": "Advantages",
+          "nav.about": "About Us",
+          "nav.contact": "Contact Us",
+          "inquiry": "Inquiry Now",
+          "hero.title": "High-Quality Digital Printing Materials<br>Empower Your Business Growth",
+          "hero.desc": "We provide professional transfer paper, UV films and printing inks to meet various industrial printing needs and help you achieve high-quality printing results.",
+          "browseProducts": "Browse Products",
+          "contactUs": "Contact Us",
+          "products.title": "Our Product Series",
+          "products.desc": "Selected high-quality printing materials to meet your various production needs, providing excellent printing results and durability",
+          "bestseller": "Bestseller",
+          "newArrival": "New Arrival",
+          "recommended": "Recommended",
+          "products.transferPaper": "High-Quality Transfer Paper",
+          "products.transferPaperDesc": "Suitable for transfer printing on various fabrics, with high color reproduction, wash-resistant and not easy to fade, easy to operate.",
+          "products.uvFilm": "UV Printing Film",
+          "products.uvFilmDesc": "Adopting advanced UV curing technology, with super adhesion and scratch resistance, suitable for various hard surfaces such as metal, glass and plastic.",
+          "products.colorFilm": "Color Printing Film",
+          "products.colorFilmDesc": "Professional color printing film with high color saturation and strong layering, suitable for high-end printing needs.",
+          "products.thermalInk": "Thermal Transfer Ink",
+          "products.thermalInkDesc": "High adhesion thermal transfer special ink, bright and long-lasting color, suitable for various fabrics, excellent wash resistance.",
+          "products.dtfFilm": "DTF Printing Film",
+          "products.dtfFilmDesc": "Direct transfer film without pre-treatment, suitable for cotton, linen, polyester and other fabrics, with strong color expression, good elasticity and wash resistance.",
+          "products.petGoldFilm": "UV Gold Foil Film",
+          "products.petGoldFilmDesc": "Gold foil film using advanced UV curing technology, with strong adhesion, high gloss, long-lasting stamping effect, suitable for high-end printing fields such as gift packaging and cosmetic boxes.",
+          "learnMoreDetails": "Learn More",
+          "viewAllProducts": "View All Products",
+          "features.title": "Our Product Advantages",
+          "features.desc": "Selected high-quality raw materials and advanced production technology to provide you with excellent printing solutions",
+          "features.highQualityMaterials": "High-Quality Raw Materials",
+          "features.highQualityMaterialsDesc": "Using imported high-quality raw materials,经过严格筛选和测试，确保产品稳定性和一致性。",
+          "features.highColorReproduction": "High Color Reproduction",
+          "features.highColorReproductionDesc": "Excellent color performance, can accurately reproduce the color of the design draft, presenting bright and full printing effects.",
+          "features.ecoFriendlyTitle": "Eco-Friendly",
+          "features.ecoFriendlyDesc": "Complies with international environmental standards, using non-toxic and harmless formulas, friendly to humans and the environment, and safe to use.",
+          "features.quickDryingTitle": "Quick Drying",
+          "features.quickDryingDesc": "Special formula design, fast drying speed, can improve production efficiency, reduce waiting time, suitable for large-scale production.",
+          "features.wideApplicability": "Wide Applicability",
+          "features.wideApplicabilityDesc": "Suitable for a variety of fabrics and materials, whether cotton, linen, silk or synthetic materials, can present excellent results.",
+          "features.durability": "Strong Durability",
+          "features.durabilityDesc": "Excellent washability and abrasion resistance, printed patterns are not easy to fade or crack, maintaining long-term beauty.",
+          "about.title": "Professional Digital Printing Materials Supplier",
+          "about.desc": "We are a digital printing materials manufacturer with 15 years of experience, focusing on the R&D, production and sales of transfer paper, UV films and printing inks. With advanced production equipment and strict quality control system, we provide high-quality printing materials solutions for global customers.",
+          "about.ourFactory": "Factory Photos",
+          "about.factoryExterior": "Modern Factory Park",
+          "about.productionWorkshop": "Clean Production Workshop",
+          "about.automatedLine": "Intelligent Coating Production Line",
+          "about.qualityControl": "Precision Testing Laboratory",
+          "about.professionalTeam": "Professional Team",
+          "about.professionalTeamDesc": "With an experienced R&D and production team, we constantly innovate and improve products.",
+          "about.qualityCertification": "Quality Certification",
+          "about.qualityCertificationDesc": "Products have passed multiple international certifications, with reliable quality, safety and environmental protection.",
+          "about.globalSales": "Global Sales",
+          "about.globalSalesDesc": "Products are exported to more than 50 countries and regions around the world, well received by customers.",
+          "about.qualityService": "Quality Service",
+          "about.qualityServiceDesc": "Provide professional technical support and perfect after-sales service, so that you have no worries.",
+          "about.learnMore": "Learn More",
+          "quickLinks": "Quick Links",
+          "contactInfo": "Contact Information",
+          "copyright": "© 2023 Shenye International New Materials Co., Ltd. All Rights Reserved"
+        }
+      };
+  
+      // 语言切换实现 - 优化版本
+      class LanguageManager {
+        constructor() {
+          this.currentLang = this.getStoredLanguage() || 'zh';
+          this.init();
+        }
+        
+        init() {
+          this.bindEvents();
+          this.setLanguage(this.currentLang);
+          this.updateLanguageButtons(this.currentLang);
+        }
+        
+        bindEvents() {
+          // 桌面端语言按钮
+          document.getElementById('lang-en').addEventListener('click', () => this.switchLanguage('en'));
+          document.getElementById('lang-zh').addEventListener('click', () => this.switchLanguage('zh'));
+          
+          // 移动端语言按钮
+          document.getElementById('mobile-lang-en').addEventListener('click', () => this.switchLanguage('en', true));
+          document.getElementById('mobile-lang-zh').addEventListener('click', () => this.switchLanguage('zh', true));
+          
+          // 键盘快捷键支持 (Ctrl+L 切换语言)
+          document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'l') {
+              e.preventDefault();
+              this.switchLanguage(this.currentLang === 'zh' ? 'en' : 'zh');
+            }
+          });
+        }
+        
+        switchLanguage(lang, isMobile = false) {
+          // 防止重复点击
+          if (this.currentLang === lang) return;
+          
+          // 添加按钮点击反馈
+          const activeButton = document.getElementById(isMobile ? `mobile-lang-${lang}` : `lang-${lang}`);
+          if (activeButton) {
+            activeButton.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              activeButton.style.transform = 'scale(1)';
+            }, 100);
+          }
+          
+          this.setLanguage(lang);
+          this.updateLanguageButtons(lang);
+          this.storeLanguage(lang);
+          
+          // 如果是移动端，关闭菜单
+          if (isMobile) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+        
+        setLanguage(lang) {
+          this.currentLang = lang;
+          
+          // 添加切换动画
+          document.querySelectorAll('[data-i18n]').forEach(el => {
+            el.classList.add('language-fade');
+            el.classList.remove('language-fade-in');
+          });
+          
+          setTimeout(() => {
+            if (lang === 'zh') {
+              // 重置为中文，恢复原始内容
+              document.querySelectorAll('[data-i18n]').forEach(el => {
+                const original = el.getAttribute('data-i18n-original');
+                if (original) {
+                  el.innerHTML = original;
+                }
+                el.removeAttribute('data-i18n-original');
+              });
+            } else {
+              // 应用英文翻译
+              document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (!el.getAttribute('data-i18n-original')) {
+                  el.setAttribute('data-i18n-original', el.innerHTML);
+                }
+                if (translations[lang] && translations[lang][key]) {
+                  el.innerHTML = translations[lang][key];
+                }
+              });
+            }
+            
+            // 恢复动画效果
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+              el.classList.remove('language-fade');
+              el.classList.add('language-fade-in');
+            });
+          }, 150);
+        }
+        
+        updateLanguageButtons(lang) {
+          const buttonConfigs = [
+            { id: 'lang-en', active: lang === 'en' },
+            { id: 'lang-zh', active: lang === 'zh' },
+            { id: 'mobile-lang-en', active: lang === 'en' },
+            { id: 'mobile-lang-zh', active: lang === 'zh' }
+          ];
+          
+          buttonConfigs.forEach(config => {
+            const button = document.getElementById(config.id);
+            if (button) {
+              if (config.active) {
+                button.classList.add('bg-primary', 'text-white');
+                button.classList.remove('bg-white', 'text-dark', 'hover:bg-gray-100');
+              } else {
+                button.classList.add('bg-white', 'text-dark', 'hover:bg-gray-100');
+                button.classList.remove('bg-primary', 'text-white');
+              }
+            }
+          });
+        }
+        
+        getStoredLanguage() {
+          try {
+            return localStorage.getItem('preferred-language') || 'zh';
+          } catch (e) {
+            return 'zh';
+          }
+        }
+        
+        storeLanguage(lang) {
+          try {
+            localStorage.setItem('preferred-language', lang);
+            // 显示切换提示
+            this.showLanguageNotification(lang);
+          } catch (e) {
+            console.warn('无法保存语言偏好设置');
+          }
+        }
+        
+        showLanguageNotification(lang) {
+          // 创建提示元素
+          const notification = document.createElement('div');
+          notification.className = 'fixed top-4 right-4 bg-primary text-white px-4 py-2 rounded-md shadow-lg z-50 transition-all duration-300 transform translate-x-full';
+          notification.textContent = lang === 'zh' ? '已切换到中文' : 'Switched to English';
+          
+          document.body.appendChild(notification);
+          
+          // 显示动画
+          setTimeout(() => {
+            notification.classList.remove('translate-x-full');
+          }, 100);
+          
+          // 自动隐藏
+          setTimeout(() => {
+            notification.classList.add('translate-x-full');
+            setTimeout(() => {
+              document.body.removeChild(notification);
+            }, 300);
+          }, 2000);
+        }
+      }
+      
+      // 初始化语言管理器
+      const languageManager = new LanguageManager();
+      
+      // 图片懒加载和清晰化优化
+      class ImageOptimizer {
+        constructor() {
+          this.init();
+        }
+        
+        init() {
+          this.setupLazyLoading();
+          this.optimizeExistingImages();
+        }
+        
+        setupLazyLoading() {
+          // 创建 Intersection Observer 用于懒加载
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                this.loadImage(img);
+                observer.unobserve(img);
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+          
+          // 观察所有带有 loading="lazy" 的图片
+          document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+          });
+        }
+        
+        loadImage(img) {
+          // 添加加载动画
+          img.classList.add('image-loading');
+          
+          // 模拟加载过程
+          setTimeout(() => {
+            img.classList.remove('image-loading');
+            img.classList.add('image-sharp');
+          }, 300);
+        }
+        
+        optimizeExistingImages() {
+          // 为所有图片添加清晰化处理
+          document.querySelectorAll('img').forEach(img => {
+            if (!img.classList.contains('image-sharp')) {
+              img.classList.add('image-sharp');
+            }
+            
+            // 添加错误处理
+            img.addEventListener('error', () => {
+              img.style.display = 'none';
+              console.warn('图片加载失败:', img.src);
+            });
+          });
+        }
+      }
+      
+      // 初始化图片优化器
+      const imageOptimizer = new ImageOptimizer();
+      
+    </script>
+  
+      
+      </body></html>
